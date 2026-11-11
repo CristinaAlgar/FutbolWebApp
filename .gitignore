@@ -1,0 +1,15 @@
+#Archivos de datos locales de DataFlex
+Data/*.dat
+Data/*.hdr
+Data/*.k*
+Data/*.tag
+Data/*.cch
+Data/*.log
+#Configuración local de conexiones 
+Data/DFConnId.ini
+#Archivos generados al compilar
+Programs/*.exe
+Programs/*.dbg
+Programs/*.log
+#Archivo local del workspace de DataFlex
+IdeSrc/Workspace.loc
