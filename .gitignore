@@ -13,3 +13,11 @@ Programs/*.dbg
 Programs/*.log
 #Archivo local del workspace de DataFlex
 IdeSrc/Workspace.loc
+#Archivo ZIP del tema personalizado.
+AppHtml/CssThemes/FutbolWebApp.zip
+#Preferencias y metadatos locales de DataFlex Studio
+IdeSrc/*.dsk
+IdeSrc/StudioMetaData64.mtd
+#Archivos locales de conexión y configuración de tablas.
+Data/*.int
+Data/Filelist.cfg
