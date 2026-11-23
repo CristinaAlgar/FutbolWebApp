@@ -7,6 +7,7 @@ Use cWebPanel.pkg
 Use cWebMenuGroup.pkg
 Use cWebMenuItem.pkg
 Use cWebForm.pkg
+Use SelectPosicion.wo
 
 Use cligaDataDictionary.dd
 Use cequipoDataDictionary.dd
@@ -129,8 +130,17 @@ Object oZoomJugador is a cWebView
             Procedure OnClick
                 Send RefreshRecord
             End_Procedure
+        
 
         End_Object 
+        
+        Object oPosicionesBtn is a cWebMenuItem
+            Set psCaption to "Ver posiciones"
+            WebRegisterPath ntNavigateForward oSelectPosicion
+            Procedure OnClick
+                Send NavigatePath
+            End_Procedure
+        End_Object
     End_Object 
 
     Procedure SetActionButtons
@@ -183,6 +193,17 @@ Object oZoomJugador is a cWebView
                 Case Break
 
             Case Else // must be nfUndefined
+            // Actividad 3: From Undefined ->ZoomJugador ->SelectPosición.
+            //Desde ZoomJugador se abre SelectPosicion mediante el botón 
+            //"ver posiciones", que inicia una nueva navegación idependiente
+            //hacia SelectPosicion mediante NavigatePath.
+            //Se ha comprobado que SelectPosicion recibe
+            //nfUndefined(valor 0).
+            //Existe una relación muchos a muchos (N:M) entre jugador y posición,
+            //mediante la tabla intermedia jugadorposicion.
+            //JugadorID relaciona jugador con jugadorposicion y PosicionID
+            //relaciona jugadorposicion con posicion.
+            Case Break
 
         Case End
 
