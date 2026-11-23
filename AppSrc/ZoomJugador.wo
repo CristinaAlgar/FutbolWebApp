@@ -179,6 +179,15 @@ Object oZoomJugador is a cWebView
     End_Procedure
 
     Procedure OnNavigateForward tWebNavigateData NavigateData Integer hoInvokingView Integer hoInvokingObject
+        String sNombreJugador
+        Boolean bHasRecord
+        Get HasRecord of ojugador_DD to bHasRecord
+        If (bHasRecord) Begin
+            Move (Trim(jugador.Nombre) + " " + Trim(jugador.Apellido)) to sNombreJugador
+            Send SetHeaderCaption sNombreJugador
+            Send SetBreadcrumbCaption sNombreJugador
+            WebSet psCaption to sNombreJugador
+        End
         Case Begin
             Case (NavigateData.eNavigateType = nfFromMain)
                 // If from main, this is a propbably a main file Select to Zoom.
